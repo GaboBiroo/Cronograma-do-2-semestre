@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle de Notas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #cbd5e1;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 20px;
+            }
+        }
+        
+        .signature {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md p-6 mb-8 text-center">
+        <img src="images/Logo.png" alt="Logo da Faculdade" class="mx-auto h-48 mb-6" onerror="this.onerror=null;this.src='https://placehold.co/480x192/e2e8f0/4a5568?text=Logo+Faculdade';">
+        <h1 class="text-4xl font-bold text-gray-900 tracking-tight">Painel de Controle de Notas</h1>
+        <p class="text-lg text-gray-600 mt-2">Seu guia completo para o semestre!</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Seção Sistema de Avaliação -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg mb-16 max-w-4xl mx-auto border-t-4 border-blue-500">
+            <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Sistema de Avaliação Geral</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-lg">
+                <div class="bg-blue-50 p-4 rounded-lg"><strong>A1 (Avaliação Regimental):</strong> Nota fixa de 5,0 pontos.</div>
+                <div class="bg-blue-50 p-4 rounded-lg"><strong>A2 (Avaliação Intermediária):</strong> Nota de 5,0 pontos, vinda das atividades do professor.</div>
+                <div class="bg-green-50 p-4 rounded-lg col-span-2 md:col-span-1"><strong>Nota Final:</strong> A soma de A1 + A2, totalizando 10,0 pontos.</div>
+                <div class="bg-green-50 p-4 rounded-lg col-span-2 md:col-span-1"><strong>Média para Aprovação:</strong> Nota final igual ou superior a 6,0.</div>
+                <div class="bg-yellow-50 p-4 rounded-lg col-span-2"><strong>AF (Avaliação Final):</strong> Prova de recuperação que substitui a menor nota entre A1 e A2, se necessário.</div>
+            </div>
+        </div>
+
+        <!-- Timeline das Matérias -->
+        <div class="relative timeline-container">
+
+            <!-- Segunda-feira -->
+            <div class="mb-12 md:flex md:items-center md:flex-row-reverse">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-800">Segunda-feira: Engenharia de Software</h3>
+                        <p class="text-md text-gray-600 mb-4">Professor: Edson Wagner Rodrigues</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-lg mb-2">Composição da Nota:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>A1 (5,0):</strong> Prova Regimental.</li>
+                                <li><strong>A2 (5,0):</strong> 2,0 pts (Estudos Dirigidos) + 3,0 pts (Prova A2).</li>
+                                <li><strong>Bônus:</strong> Quizzes e atividades em sala.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Checklist de Atividades Pendentes:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Estudo Dirigido 4 - Simulado (20/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Prova A2 (27/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Prova Regimental A1 (17/11)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center p-4">
+                    <img src="Images\Primeiro prof.jpeg" alt="Foto do Professor 1" class="w-56 h-56 object-cover rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/224x224/e2e8f0/4a5568?text=Professor+1';">
+                </div>
+            </div>
+
+            <!-- Terça-feira -->
+            <div class="mb-12 md:flex md:items-center">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-teal-500 md:text-right">
+                        <h3 class="text-2xl font-bold text-teal-800">Terça-feira: Sistemas Operacionais</h3>
+                        <p class="text-md text-gray-600 mb-4">Professor: Cristiano Negrão</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-lg mb-2">Composição da Nota:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>A1 (5,0):</strong> Prova Regimental.</li>
+                                <li><strong>A2 (5,0):</strong> 3,0 pts (Prova A2) + 2,0 pts (Exercícios).</li>
+                                <li><strong>Obs:</strong> Entregas atrasadas valem metade da nota.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Checklist de Atividades Pendentes:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Tarefa 09 - Simulado (Prazo final hoje: 12/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Avaliação A2 (14/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Tarefa 10 - Virtualização (25/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Avaliação A1 (16/12)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center p-4">
+                    <img src="Images\Segundo Prof.png" alt="Foto do Professor 2" class="w-56 h-56 object-cover rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/224x224/e2e8f0/4a5568?text=Professor+2';">
+                </div>
+            </div>
+
+            <!-- Quarta-feira -->
+            <div class="mb-12 md:flex md:items-center md:flex-row-reverse">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-500">
+                        <h3 class="text-2xl font-bold text-purple-800">Quarta-feira: Programação WEB</h3>
+                        <p class="text-md text-gray-600 mb-4">Professor: André Vitorino Gonçalves</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-lg mb-2">Composição da Nota:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>A1 (5,0):</strong> Prova Regimental.</li>
+                                <li><strong>A2 (5,0):</strong> Nota integral do Projeto "Quiosque de Praia".</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Checklist do Projeto (A2):</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Entrega 1: Análise e Modelagem (27/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Entrega 2: Módulo de Cadastros (27/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Entrega 3: Módulo de Vendas e Estoque (19/11)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Entrega Extra: Módulo Gerencial (19/11)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center p-4">
+                    <img src="Images\Terceiro Prof.png" alt="Foto do Professor 3" class="w-56 h-56 object-cover rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/224x224/e2e8f0/4a5568?text=Professor+3';">
+                </div>
+            </div>
+
+            <!-- Quinta-feira -->
+            <div class="mb-12 md:flex md:items-center">
+                <div class="md:w-1/2">
+                     <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-orange-500 md:text-right">
+                        <h3 class="text-2xl font-bold text-orange-800">Quinta-feira: Técnicas e Algoritmo</h3>
+                        <p class="text-md text-gray-600 mb-4">Professor: Cristiano Negrão</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-lg mb-2">Composição da Nota:</h4>
+                             <ul class="list-disc list-inside space-y-1">
+                                <li><strong>A1 (5,0):</strong> Prova Regimental.</li>
+                                <li><strong>A2 (5,0):</strong> 3,0 pts (Prova A2) + 2,0 pts (Exercícios).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Checklist de Atividades Pendentes:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Avaliação A2 (16/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Avaliação Regimental A1 (01/12)</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-3 rounded">
+                            <p class="font-bold">Atenção: A Prova A2 é escrita. Levar caneta!</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="md:w-1/2 flex justify-center p-4">
+                    <img src="Images\Quarto Prof.jpeg" alt="Foto do Professor 4" class="w-56 h-56 object-cover rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/224x224/e2e8f0/4a5568?text=Professor+4';">
+                </div>
+            </div>
+
+            <!-- Sexta-feira -->
+            <div class="mb-12 md:flex md:items-center md:flex-row-reverse">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-800">Sexta-feira: Logística Empresarial</h3>
+                        <p class="text-md text-gray-600 mb-4">Professor: Odir Veiga</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-lg mb-2">Composição da Nota:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>A1 (5,0):</strong> Prova Regimental.</li>
+                                <li><strong>A2 (5,0):</strong> 3,0 pts (Prova A2) + 2,0 pts (Mini Seminário).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Checklist de Atividades Pendentes:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Prova A2 (24/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Mini Seminário (31/10)</li>
+                                <li><span class="font-semibold text-red-600">[Pendente]</span> Prova Regimental A1 (14/11)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center p-4">
+                     <img src="Images\Quinto Prof.jpeg" alt="Foto do Professor 5" class="w-56 h-56 object-cover rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/224x224/e2e8f0/4a5568?text=Professor+5';">
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer class="text-center py-12">
+        <div class="inline-flex items-center justify-center gap-4">
+            <img src="Images\4dfca88620c0c249cb9d28e11c1e3727.jpg" alt="Personagem" class="h-20 w-20 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/80x80/000000/ffffff?text=';">
+            <p class="signature text-4xl text-gray-700">Gabriel H Rodrigues</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
